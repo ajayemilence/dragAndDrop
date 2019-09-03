@@ -1,0 +1,112 @@
+<div class="drag_drop_files_page" (change)="onFilesChange($event)">
+    <div class="bg_white dropfile_bg_div clearfix">
+
+      <file-drop headertext="Drop files here" (onFileDrop)="dropped($event)" 
+          (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+          <img src="assets/images/drag_file.png"><br>
+          </file-drop>
+  
+          <div class="upload-table" *ngFor="let item of files; let i=index">
+
+            <p>{{ item.relativePath }}</p>
+        </div>
+        <!-- <app-loader *ngIf="loading"></app-loader> -->
+  
+        <!-- another one -->
+  
+      <div class="container">
+        <div class="mt-4 click_upload text-center">
+          <!-- <p *ngIf="mediaType == 2">Provide mp4 for best video quality.</p> -->
+        </div>
+        <div class="upload_sec">
+          <ul>
+            <li class="upload_li">
+
+                <label  type="upload" class="btn btn-default">
+                    <input type="file" id="myFile" name="Upload from" accept="image/*"
+                    (change)="onFileChange($event.target.files)">
+                    <img src="{{localImagePath}}plus_click.png">
+                  </label>
+              <br>
+
+                <label  type="upload" class="btn btn-default u_vdo">Click here to <b>Upload Image</b>
+                  <input type="file" id="myFile" name="Upload from" accept="image/*"
+                  (change)="onFileChange($event.target.files)"></label>
+                <br>
+                <p class="file_name_uploaded">{{mediaName}}</p>
+              </li>
+                
+            <!-- <li class="or"><p>OR</p></li>
+            <li class="upload_li">            
+              <label type="upload" class="btn btn-default">
+                  <img src="{{localImagePath}}dropbox.png">
+                </label>
+              
+              <br>
+              <button type="file" id="myFile" class="btn btn-default">Upload from <b>Dropbox</b></button></li> -->
+          </ul>
+        </div>
+        
+        <!-- <div *ngIf="showProgress" class="progressbar">
+            <p class="percentage_bar"><span style="color: red">  {{uploadedProgressCount}} %</span> Uploaded </p>
+            <mat-progress-bar mode="determinate" value={{uploadedProgressCount}}></mat-progress-bar>
+            <div class="text-center">
+              <button type="action" class="btn btn-default cancelUpload" (click)="cancelUpload()">CANCEL</button>
+            </div>
+          </div> -->
+  
+        <div class="action_buttons pb-5 text-center">
+          <ul *ngIf="!showProgress">
+            <li><button type="action" class="btn btn-default" (click)="check()">CANCEL</button></li>
+            <li><button type="action" class="btn btn-default fill_btn" (click)="uploadMedia()">UPLOAD</button></li>
+          </ul>
+          <p class="errorMsg" *ngIf="message"><b>{{errorMsg}}</b></p>
+        </div>
+        
+        
+        <div class="click_upload text-center">
+          <p>By uploading, you confirm that your sounds comply with our <span class="termsUse"><b>Terms of Use </b></span>and you don’t infringe anyone else’s rights.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- <div class="upload_sec">
+    <ul>
+      <li class="upload_li">
+          <label *ngIf="mediaType == 1" type="upload" class="btn btn-default">
+            <input type="file" id="myFile" name="Upload from" accept="audio/*"
+            (change)="onFileChange($event.target.files)">
+            <img src="{{localImagePath}}plus_click.png">
+          </label>
+          
+          <label *ngIf="mediaType == 2" type="upload" class="btn btn-default">
+              <input type="file" id="myFile" name="Upload from" accept="video/mp4,video/mkv"
+              (change)="onFileChange($event.target.files)">
+              <img src="{{localImagePath}}plus_click.png">
+            </label>
+        <br>
+
+        <label *ngIf="mediaType == 1" type="upload" class="btn btn-default u_vdo">Click here to <b>Upload Audio</b>
+          <input type="file" id="myFile" name="Upload from" accept="audio/*"
+          (change)="onFileChange($event.target.files)"></label>
+          <label *ngIf="mediaType == 2" type="upload" class="btn btn-default u_vdo">Click here to <b>Upload Video</b>
+            <input type="file" id="myFile" name="Upload from" accept="video/mp4,video/mkv"
+            (change)="onFileChange($event.target.files)"></label>
+          <br>
+          <p class="file_name_uploaded">{{mediaName}}</p>
+        </li>
+          
+      <li class="or"><p>OR</p></li>
+      <li class="upload_li">            
+        <label type="upload" class="btn btn-default">
+            <img src="{{localImagePath}}dropbox.png">
+          </label>
+        
+        <br>
+        <button type="file" id="myFile" class="btn btn-default">Upload from <b>Dropbox</b></button></li>
+    </ul>
+  </div> -->
