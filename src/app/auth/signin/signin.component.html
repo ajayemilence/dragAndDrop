@@ -1,0 +1,114 @@
+<section *ngIf="!fbSignIn" class="login animatedParent animateOnce">
+    <div class="row row_common_class clearfix">
+      <div class="col-md-6">
+        <div class="container">
+          <div class="img_sec_sin animated slideInLeft">
+            <img src="{{localImagePath}}/signin_image.png">
+          </div>
+        </div>
+      </div>
+        <div class="col-md-6">
+          <div class="container">
+            <div class="sign_upform animated slideInRight">
+              <form class="s_in_form text-center" (ngSubmit)="onSignin(f)" #f="ngForm">
+                <h1>Sign In</h1>
+                <p class="errorMsg" *ngIf="message"><b>{{errorMsg}}</b></p> 
+                <div class="form-group" >
+                  <input type="name" class="form-control" placeholder="Email" required name="email" ngModel #email="ngModel" email>
+                  <input type="password" class="form-control mt-3" placeholder="Password" name="password"
+                  id="password" class="form-control" ngModel required>
+                  <div class="sign_in_btn">
+                    <button type="submit" class="btn btn-deafault mt-3" >SIGN IN</button>
+                  </div>
+                </div>
+  
+                <div class="after_line"></div>
+                  <div class="withfb">
+                    <p class="fb_line">Sign in with Facebook</p>
+                    <i class="fab fa-facebook-f socialIcon" (click)="socialSignIn('facebook')"></i>
+                    <div class="dont_have_acc">
+                      <p>Don't Have An Account Yet?</p>
+                      <button class="btn btn-deafault"  routerLink="/role">Sign Up</button>
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>	
+      </div>
+  </section>
+  
+  <div *ngIf="fbSignIn" class="fb_steps">
+    <div class="container">
+        <div class="back_icon_btn text-left">
+            <i (click)="backSignIn()" class="fas fa-times"></i>
+            <h1 class="text-center">Login as</h1>
+        </div>
+  
+        <div class="row height_circles">      
+            <div class="col-md-4">
+                <ul>
+                    <li class="active">
+                        <a class="">
+                          
+                                <div class="fb_steps_bg text-center" (click)="socialSigninFirst(0)">        
+                                    <div class="inner_step_text">
+                                        <p>I'm a</p>
+                                        <h1>Creator</h1>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                          
+                            <p class="mob_text">
+                                ARTIST,MUSICAN,BAND,GROUP,
+                                SONGWRITER OR COMPOSER.
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+  
+            <div class="col-md-4">
+                <a >
+            
+                        <div class="fb_steps_bg text-center" (click)="socialSigninFirst(1)">
+                            <div class="inner_step_text">
+                                <p>I'm a</p>
+                                <h1>Fan</h1>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                   
+                    <p class="mob_text">
+                        SUPPORT ARTISTS AND 
+                        DISCOVER NEW MUSIC
+                    </p>
+                </a>
+            </div>
+  
+            <div class="col-md-4">
+                <a >
+         
+                        <div class="fb_steps_bg text-center" (click)="socialSigninFirst(2)">     
+                            <div class="inner_step_text">
+                                <p>We are an</p>
+                                <h1>Organization</h1> 
+                                <i class="fas fa-chevron-down"></i>
+                            </div>    
+                        </div>
+         
+                    <p class="mob_text">
+                        MUSIC LABEL, MANAGER OR
+                        TALENT SCOUT.
+                    </p>
+                </a>
+            </div>
+  
+  
+  
+        </div>
+  
+  
+    </div>
+  
+  </div>

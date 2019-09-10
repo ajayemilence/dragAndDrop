@@ -1,0 +1,50 @@
+<section class="sign_up">
+    <div class="row row_common_class clearfix">
+      <div class="col-md-6">
+        <div class="container">
+          <div class="img_sec_sup">
+            <img src="{{localImagePath}}/signup_img.png">
+            <div class="sign_in_linkbtn">
+              <ul><li><p>Already Have An Account?</p></li>
+              <li><button type="submit" routerLink="/signin" class="btn btn-default">Sign in</button></li></ul>
+            </div>
+          </div> 
+        </div>
+    </div>
+        <div class="col-md-6">
+          <div class="container">
+            <div class="close_btn"> 
+                <img src="{{localImagePath}}/ic_cross.png" routerLink="/role">
+              </div>
+            <div class="sign_upform">
+              
+              <form class="s_up_form text-center" (ngSubmit)="onSignup(f)" #f="ngForm">
+                <h1>Sign Up</h1>
+                <p style="color:#fff;">We will send you the OTP on your given email id from there you can complete your registration.</p>
+                
+                <p class="errorMsg" *ngIf="message"><b>{{errorMsg}}</b></p> 
+  
+                <div class="form-group">
+                  <input type="name" class="form-control" placeholder="Email" required name="email" ngModel #email="ngModel" email required>
+                  <input type="password" class="form-control mt-3" placeholder="Password" name="password"
+                  id="password" class="form-control" ngModel required>
+                  <input type="password" class="form-control mt-3" placeholder="Confirm Password" name="cpassword"
+                  id="cpassword" class="form-control" ngModel required>
+                  <div class="sign_in_btn">
+                    <button type="submit" class="btn btn-deafault mt-3">SIGN UP</button>
+                  </div>
+                </div>
+  
+                <div class="after_line"></div>
+                  <div class="withfb">
+                    <p class="fb_line">Sign Up with Facebook</p>
+                    <i class="fab fa-facebook-f"></i>
+                  </div>
+              </form>
+  
+  
+            </div>
+          </div>
+        </div>	
+      </div>
+  </section>

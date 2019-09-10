@@ -1,0 +1,109 @@
+.sign_upform input {
+    padding: 28px 17px;
+    margin-top: 1rem;
+}
+
+.errorMsg {
+    color: red;
+    position: absolute;
+    top: 61px;
+    width: 100%;
+}
+
+form {
+    position: relative;
+}
+
+.socialIcon {
+    cursor: pointer !important;
+    content: \f39e !important;
+}
+
+/* fb screen sign in */
+
+.fb_steps .fas.fa-times {
+    padding: 14px 17px;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: #306ae4 !important;
+    color: #fff;
+    box-shadow: 0 10px 13px 0 #4867aa;
+    cursor: pointer;
+}
+
+.fb_steps_bg {
+
+    width: 92%;
+    height: 320px;
+    background-image: linear-gradient(to bottom,#4867aa,#306ae4);
+    border-radius: 50%;
+    border: 11px solid #8ccfd9;
+    box-shadow: 0 0 0 1px #4867aa;
+    cursor: pointer;
+
+}
+.fb_steps_bg:hover {
+    transform: scale(1.09);
+    width: 92%;
+    height: 320px;
+    transition: .4s;
+    border: 11px solid #8ccfd9;
+    box-shadow: 0 0 0 1px #4867aa;
+    -webkit-transform: scale(1.09);
+    transform: scale(1.09);
+}
+.fb_steps .active {
+    border:none;
+    height: 100%;
+}
+.inner_step_text {
+    -webkit-transform: translateY(60%);
+    transform: translateY(60%);
+}
+.fb_steps h1 {
+    color: #fff;
+    font-family: SF-bold;
+}
+.fb_steps .inner_step_text p {
+    font-size: 32px !important;
+    font-family: SF-light;
+    color: #fff;
+    margin-bottom: 0;
+}
+.fb_steps .inner_step_text .fas {
+    color: #fff;
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+/* over here */
+@media screen and (min-width:768px) and (max-width:1366px){
+    .sign_upform input {
+        padding: 28px 17px !important;
+    }
+}
+@media screen and (min-width:1080px) and (max-width:1600px){
+    .sign_upform input {
+        padding: 28px 17px !important;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px){
+    .s_in_form {
+        width: 85%;
+        margin: 0 auto;
+     }
+     .img_sec_sup, .sign_upform {
+        height: 100vh;
+     } 
+   }
+
+   @media only screen and (width:1024px){
+
+    .s_in_form {
+        width: 65%;
+           margin: 0 auto;
+    }
+
+    
+}
